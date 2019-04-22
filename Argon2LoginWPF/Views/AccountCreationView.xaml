@@ -1,0 +1,45 @@
+﻿<Window x:Class="Argon2LoginWPF.Views.AccountCreationView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:Argon2LoginWPF.ViewModels"
+        d:DataContext="{d:DesignInstance viewModels:AccountCreation}"
+        mc:Ignorable="d"
+        Title="AccountCreationView" Height="450" Width="800">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   Text="{Binding NewAccount.ValidationMessage}"
+                   Foreground="Red" 
+                   TextWrapping="Wrap"
+                   Width="200"
+                   HorizontalAlignment="Center"
+                   Padding="5" Margin="5"/>
+        <TextBox Grid.Row="1"
+                 Text="{Binding NewAccount.Name}"
+                 Width="200"
+                 HorizontalAlignment="Center"
+                 Padding="5" Margin="5"/>
+        <TextBox Grid.Row="2"
+                 Text="{Binding NewAccount.Password}"
+                 Width="200"
+                 HorizontalAlignment="Center"
+                 Padding="5" Margin="5"/>
+        <Button Grid.Row="3" Content="Register" 
+                Click="OnClick_ValidatePassword" 
+                Width="200"
+                HorizontalAlignment="Center"
+                Padding="5" Margin="5"/>
+    </Grid>
+</Window>
